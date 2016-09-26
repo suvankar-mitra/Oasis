@@ -19,6 +19,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     TextView songTitle;
     ImageView albumArt;
 
+    Animation buttonAnimation;
+
 
     private String server_host = "";
     private File file;
@@ -74,9 +78,12 @@ public class MainActivity extends AppCompatActivity {
         albumArt = (ImageView) findViewById(R.id.albumArt);
         mPlayer = new MediaPlayer();
 
+        buttonAnimation = AnimationUtils.loadAnimation(this, R.anim.button_anim_scale);
+
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                view.startAnimation(buttonAnimation);
                 if(file==null)
                     return;
                 if(isPlaying && mPlayer.isPlaying()){

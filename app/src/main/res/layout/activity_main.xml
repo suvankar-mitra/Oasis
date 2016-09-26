@@ -17,7 +17,8 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/ic_play_circle_filled_black_24dp"
         android:background="?android:selectableItemBackground"
-        android:theme="@style/WhiteBackground" />
+        android:theme="@style/WhiteBackground"
+        android:contentDescription="play button" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -61,8 +62,8 @@
         android:id="@+id/currentTime"
         android:layout_below="@+id/seekBar"
         android:layout_alignParentStart="true"
-        android:padding="10dp"
-        android:text="0:0" />
+        android:text="0:0"
+        android:paddingTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,8 +71,8 @@
         android:id="@+id/totalTime"
         android:layout_below="@+id/seekBar"
         android:layout_alignParentEnd="true"
-        android:padding="10dp"
-        android:text="0:0" />
+        android:text="0:0"
+        android:paddingTop="10dp" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -87,5 +88,29 @@
             android:src="@drawable/album_art"
             android:layout_gravity="left|top" />
     </FrameLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/repeat"
+        android:src="@drawable/ic_repeat_black_24dp"
+        android:background="?android:selectableItemBackground"
+        android:padding="10dp"
+        android:layout_alignTop="@+id/prev"
+        android:layout_toStartOf="@+id/prev"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/WhiteBackground"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:layout_alignTop="@+id/next"
+        android:layout_toEndOf="@+id/next"
+        android:src="@drawable/ic_shuffle_black_24dp"
+        android:background="?android:selectableItemBackground"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/WhiteBackground"/>
 
 </RelativeLayout>
